@@ -1,0 +1,19 @@
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-website-2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: site-label
+  template:
+    metadata:
+      labels:
+        app: site-label
+    spec:
+      containers:
+      - name: web-deploy
+        image: keith1000/my_pod_image_1
